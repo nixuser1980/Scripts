@@ -61,7 +61,7 @@ for f in $(find $2 -type f ! -size 0 2>/dev/null); do
 
 			if [ "$HASH2" = "$HASH1" ]; then
 				if [ "$1" = "-u" ]; then
-					rm $FILENAME2
+					rm -f $FILENAME2
 					echo  "$FILENAME2 $HASH2 [MATCH UNINSTALLED]"
 					DELCOUNT=$((DELCOUNT + 1))
 				else
@@ -75,4 +75,4 @@ for f in $(find $2 -type f ! -size 0 2>/dev/null); do
 	echo
 done
 
-echo "Count of Files Uninstalled: "$DELCOUNT '\n' 
+echo "Count of files uninstalled: "$DELCOUNT '\n' 
